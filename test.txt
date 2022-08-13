@@ -1,1 +1,12 @@
 123
+
+添加要push的文件
+git add filepath
+git add .
+
+提交文件
+git commit -m "注释"
+
+推送
+git push origin 'branchname'
+
