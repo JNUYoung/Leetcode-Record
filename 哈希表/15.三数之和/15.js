@@ -90,3 +90,17 @@ console.log([-1,0,1,2,-1,-4,-2,-3,3,0,4].sort((a,b)=>a-b))
 
 // 因此,如果在上面的代码中,仅使用nums.sort(),当存在负数时,负数的顺序就会出现问题
 // 因此,在使用Array().sort()时,一定要传入compare function
+
+
+
+var Person = function(name, age) {
+    this.age = age;
+    this.name = name;
+}
+
+let person1 = new Person('zhangsan', 20);
+
+console.log(person1.constructor);
+console.log(Person.constructor)
+console.log(Person.prototype.__proto__);
+console.log(person1.__proto__);

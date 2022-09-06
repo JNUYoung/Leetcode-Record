@@ -6,7 +6,7 @@
  * @FilePath: \young_leetcode\字符串\344.反转字符串.ts
  */
 
-function reverseString(s: String[]): void {
+function reverseString1(s: String[]): void {
     let length: number = s.length;
     let left: number = 0;
     let right: number = length - 1;
@@ -21,4 +21,4 @@ function reverseString(s: String[]): void {
     }
 }
 
-console.log(reverseString(['h','e','l','l','o']))
+console.log(reverseString1(['h','e','l','l','o']))
