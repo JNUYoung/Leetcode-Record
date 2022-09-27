@@ -16,7 +16,7 @@
 
 
 /**
- * 1.遍历字符串每个字符
+ * 
  */
 
 var convert = function(s, numRows) {
@@ -38,3 +38,12 @@ var convert = function(s, numRows) {
 }
 
 console.log(convert("PAYPALISHIRING", 3));
+
+/**
+ * 可以理解为，有numRows个字符串
+ * 
+ * 元素不断地添加进 1, 2, ... , numRows, numRow-1, ... , 1, 2, ...；
+ * 也即从1到numRows，再从numRows到1，不断地将字符添加到对应的字符串中
+ * 
+ * 因此，用一个flag来标识何时应该反转方向——到达边界时，也就是第一个字符串或第numRows个字符串添加完元素后
+ */
