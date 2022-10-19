@@ -20,3 +20,10 @@ map: 返回新数组;
 every: 检查数组每个元素;
 some: 数组任一元素满足即可;
 filter: 过滤并返回满足条件的子数组;
+
+4.创建m*n的二维数组，所有元素用0填充
+
+```js
+let m = 10, n = 5;
+const arr = new Array(m).fill(0).map(()=>new Array(n).fill(0))
+```
