@@ -38,25 +38,32 @@
 };
 
 
-//? improved version
-var longestPalindrome = function(s) {
-    let res = "";
-    let maxLength = 0;
 
-    for (let i = 1; i < s.length - 1; i++) {
-        let left = i - 1;
-        let right = i + 1;
-        while (s[left] === s[right]) {
-            left--;
-            right++;
+var longestPalindrome = function(s) {
+    const expandSinceCenter = function(s, left, right) {
+        let l = left, r = right;
+        while (l >= 0 && r < s.length && s[l] === s[r]) {
+            l--;
+            r++;
         }
-        if ((right - left - 1) >= maxLength) {
-            maxLength = right - left - 1;
-            res = s.substr(left + 1, maxLength);
+        // 跳出while循环时，l和r已经指向了最大回文串的左右各一个元素
+        return r - l - 1;
+    }
+    if (s === null || s.length < 1) return "";
+    // let 和 start记录当前最长的回文子串的起止位置
+    let start = 0, end = 0;
+    for (let i = 0; i < s.length; i++) {
+        const len1 = expandSinceCenter(s, i, i);    // 以单个节点为中心节点（是否存在长度为奇数的回文串）
+        const len2 = expandSinceCenter(s, i, i + 1); // 以相连的两个节点为中心节点（是否存在长度为偶数的回文串）
+        if (Math.max(len1, len2) > end - start) {
+            // 如果存在更大的子回文串，则更新起止位置
+            start = i - (Math.max(len1, len2) - 1) / 2;
+            end = i + Math.max(len1, len2) / 2;
         }
     }
+    return s.substr(start, end - start);
+} 
 
-    return res;
-}
 
-console.log(longestPalindrome("cbbd"));
+let res = "abccba";
+console.log(res[0] === res[5]);

@@ -1,7 +1,7 @@
 1.数组求和
 
 ```js
-[1, 2, 3].reduce((res, num) => { res + num }, 0);
+[1, 2, 3].reduce((res, num) => res + num, 0);
 ```
 
 2.数组concat方法阻止默认的一维扁平化
