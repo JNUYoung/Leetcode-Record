@@ -19,6 +19,7 @@ var levelOrderTravel = function(root) {
     // 出队一个节点时，检查其是否有左右孩子节点，若有则将它们入队
     while (queue.length) {
         const temp_ans = [];
+        // 固定住当前队列的长度是关键一步，当n到0时，就代表当前层的节点已经全部遍历完了
         let n = queue.length;
         while (n--) {
             const temp_node = queue.shift();    // 出队
