@@ -10,6 +10,7 @@ const twoSum = function(nums, target) {
         }
     }
     const myMap = new Map();
+    // Map的key为数组元素的值，value为数组元素的索引
     for (const [idx, item] of nums.entries()) {
         if (myMap.has(target - item)) {
             return [myMap.get(target - item), idx];
@@ -18,6 +19,8 @@ const twoSum = function(nums, target) {
     }
     return [];
 }
+
+
 
 const param = [1, 2, 3];
 console.log(twoSum(param, 4));

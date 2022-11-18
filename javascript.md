@@ -73,3 +73,15 @@ let last_ele = arr.at(-1);
 const str = "hello";
 let last_char = str.at(-1);
 ```
+
+9.对数组随机重新排序
+
+```javascript
+const shuffleArr = (arr) => arr.sort(() => Math.random() - 0.5 ); 
+```
+
+10.数组去重
+
+```js
+const unique = (arr) => [...new Set(arr)];
+```

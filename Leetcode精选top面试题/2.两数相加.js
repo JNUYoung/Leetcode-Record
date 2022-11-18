@@ -40,3 +40,4 @@ const addtwoNumbers = function(l1, l2) {
 
 let arr = [1, 2, 3];
 console.log(arr.at(-1));
+// console.log(Math.random());
