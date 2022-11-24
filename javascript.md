@@ -85,3 +85,9 @@ const shuffleArr = (arr) => arr.sort(() => Math.random() - 0.5 );
 ```js
 const unique = (arr) => [...new Set(arr)];
 ```
+
+11.两个数组求交集
+
+```js
+const intersection = (nums1, nums2) => Array.from(new Set(nums1.map(num=>nums2.includes(num))))
+```
