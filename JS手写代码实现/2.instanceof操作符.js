@@ -31,3 +31,23 @@ const _instanceof = function(target, Fn) {
  }
 
  
+//  instanceof操作符判断数据类型，主要通过原型链的机制进行查找
+const myInstanceof = function(obj1, obj2) {
+    let obj1_proto = Object.getPrototypeOf(obj1)
+    while (true) {
+        if (obj1_proto === null) return false
+        if (obj1_proto === obj2.prototype) return true
+        obj1_proto = Object.getPrototypeOf(obj1_proto)
+    }
+}
+
+let obj = {a: 100}
+console.log(myInstanceof(obj, Object))
+
+function Foo(name) {
+    this.name = name
+}
+let obj1 = new Foo('zhangsan')    // 构造函数调用
+console.log(myInstanceof(obj1, Foo))
+console.log(Foo.prototype.constructor === Foo)
+console.log(Object.getPrototypeOf(obj1) === Foo.prototype)

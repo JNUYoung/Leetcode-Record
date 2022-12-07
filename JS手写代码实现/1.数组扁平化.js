@@ -69,3 +69,21 @@ const _myFlat = (arr, depth = 1) => {
     return arr.reduce((res, cur) => res.concat(Array.isArray(cur) ? _myFlat(cur, depth - 1) : cur), [])
 }
 console.log(_myFlat(arr1, 100));
+
+
+// 12.5
+const myFlatten = function(nums) {
+    const ans = []
+    function recur(nums) {
+        nums.forEach((item)=>{
+            if (Array.isArray(item)) {
+                recur(item)
+            } else {
+                ans.push(item)
+            }
+        })
+    }
+    recur(nums)
+    return ans
+}
+console.log(myFlatten(arr1))
